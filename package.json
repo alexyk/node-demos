@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "lz4js": "^0.2.0",
+    "msgpack": "^1.0.3"
+  },
+  "name": "nodejs-demos",
+  "description": "A collection of small projects to demonstrate or experiment with specific cases",
+  "version": "1.0.0",
+  "main": "serve.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexyk/node-demos.git"
+  },
+  "keywords": [
+    "nodejs",
+    "demos",
+    "http",
+    "msgpack",
+    "lz4",
+    "memoize"
+  ],
+  "author": "Alex K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexyk/node-demos/issues"
+  },
+  "homepage": "https://github.com/alexyk/node-demos#readme"
+}
