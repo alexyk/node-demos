@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Client (JSON, MsgPack, MsgPack+LZ4)</title>
+  <style>
+    body {
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    function request(type) {
+      const url = `http://localhost:3000/${type}`
+      const xmlHttp = new XMLHttpRequest();
+      xmlHttp.onreadystatechange = function() {
+        const { status, readyState, response, responseText } = xmlHttp || {}
+
+        if (readyState === 4 && status === 200) {
+          console.info(`RESPONSE - ${url}`, response);
+        } else {
+          console.debug(`status=${status} ready=${readyState}`);
+        }
+    }
+    xmlHttp.open("GET", url, true); // true for asynchronous 
+    xmlHttp.send();
+    }
+  </script>
+  <input type="button" onclick="request('json')" value="Request JSON" />
+  <input type="button" onclick="request('msgpack')" value="Request MsgPack" />
+  <input type="button" onclick="request('zmsgpack')" value="Request MsgPack+LZ4" />
+</body>
+</html>

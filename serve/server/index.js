@@ -47,7 +47,10 @@ function HTTPServer() {
 
     if (!mimeType || !keys.includes(type)) {
       console.log(`url=${url}`)
-      res.writeHead(200, { 'Content-Type': MIME.html })
+      res.writeHead(400, {
+        'Content-Type': MIME.html,
+        'Access-Control-Allow-Origin': '*'
+      })
 
       let theCase = 'string'
       switch (theCase) {
@@ -79,7 +82,10 @@ function HTTPServer() {
 
         const data = fs.readFileSync(FILES[type])
 
-        res.writeHead(200, { 'Content-Type': mimeType })
+        res.writeHead(200, {
+          'Content-Type': mimeType,
+          'Access-Control-Allow-Origin': '*'
+        })
         // console.log(`mime:${mimeType} filename=${FILES[arg1]} url=${req.url}`, req)
         let response = Buffer.from(data)
         DEBUG && console.log(`Response before`, response)
