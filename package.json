@@ -9,6 +9,14 @@
   "main": "serve.js",
   "devDependencies": {},
   "scripts": {
+    "serve-client-browser": "browserify serve/client/client-browser-src.js -o /Library/WebServer/Documents/msgpack/bundle.js && cp serve/client/index.html /Library/WebServer/Documents/msgpack",
+    "serve-client-node": "node serve/client/client-node.js",
+    "serve": "node serve/server",
+    "serve-debug-chrome": "node --inspect serve/server",
+    "other-memoize": "node memoizing.js",
+    "other-object-iterations": "node object-iterations.js",
+    "other-js-object-id": "node js-object-id.js",
+    "other-console-log": "node console.log.js",
     "test": "jest"
   },
   "repository": {
