@@ -1,7 +1,16 @@
 {
   "dependencies": {
+    "@hapi/hapi": "^20.1.0",
+    "axios": "^0.21.1",
+    "boxen": "^5.0.0",
+    "chalk": "^4.1.0",
+    "dotenv": "^8.2.0",
     "lz4js": "^0.2.0",
-    "msgpack": "^1.0.3"
+    "msgpack": "^1.0.3",
+    "open": "^8.0.2",
+    "querystring": "^0.2.1",
+    "uuid": "^3.3",
+    "yargs": "^16.2.0"
   },
   "name": "nodejs-demos",
   "description": "A collection of small projects to demonstrate or experiment with specific cases",
@@ -11,12 +20,18 @@
   "scripts": {
     "serve-client-browser": "browserify serve/client/client-browser-src.js -o /Library/WebServer/Documents/msgpack/bundle.js && cp serve/client/index.html /Library/WebServer/Documents/msgpack",
     "serve-client-node": "node serve/client/client-node.js",
+    "serve-client-node-debug-chrome": "node --inspect serve/client/client-node.js",
     "serve": "node serve/server",
     "serve-debug-chrome": "node --inspect serve/server",
-    "other-memoize": "node memoizing.js",
-    "other-object-iterations": "node object-iterations.js",
-    "other-js-object-id": "node js-object-id.js",
-    "other-console-log": "node console.log.js",
+    "other-memoize": "node other/memoizing.js",
+    "other-object-iterations": "node other/object-iterations.js",
+    "other-js-object-id": "node other/js-object-id.js",
+    "other-console-log": "node other/console.log.js",
+    "other-array-demo-map-forEach": "node other/array-demo-map-forEach",
+    "other-node-cli": "node other/node-cli",
+    "auth-hello": "node auth/",
+    "auth-client": "node auth/authClient",
+    "auth-server": "node auth/pckeLogin",
     "test": "jest"
   },
   "repository": {
